@@ -12,4 +12,10 @@
 3. DontStarve/
    1. models
       1. Character
-         1. name, item, description
+         1. name, description
+         2. `__str__()`: 객체를 출력할 때, 알맞은 string으로 출력하기 위해 만든다
+      2. python manage.py makemigrations DontStarve
+      3. python manage.py migrate
+   2. admin
+      1. Character
+      2. python manage.py createsuperuser
