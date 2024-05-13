@@ -19,3 +19,9 @@
    2. admin
       1. Character
       2. python manage.py createsuperuser
+   3. views
+      1. R: CharacterListView
+   4. templates/DontStarve/
+      1. character_list.html
+   5. urls
+      1. DontStarve: character_list
