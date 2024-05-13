@@ -9,3 +9,7 @@
 2. startapp DontStarve
    1. python manage.py startapp DontStarve
    2. 'DontStarve', int INSTALLED_APPS in settings.py
+3. DontStarve/
+   1. models
+      1. Character
+         1. name, item, description
