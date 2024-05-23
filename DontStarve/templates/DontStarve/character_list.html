@@ -4,11 +4,11 @@
 
 {% block content %}
 <table class="table table-bordered">
-    <tr>
+    <thead class="table-dark">
         <th>#</th>
         <th>name</th>
         <th>one liner</th>
-    </tr>
+    <thead/>
     {% for character in character_list %}
     <tr>
         <td>{{ forloop.counter }}</td>
