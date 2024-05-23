@@ -1,23 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Character list</title>
-</head>
-<body>
-    <table border="1">
-        <tr>
-            <th>#</th>
-            <th>name</th>
-            <th>one liner</th>
-        </tr>
-        {% for character in character_list %}
-        <tr>
-            <td>{{ forloop.counter }}</td>
-            <td>{{ character.name }}</td>
-            <td>{{ character.description }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Character list{% endblock %}
+
+{% block content %}
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>name</th>
+        <th>one liner</th>
+    </tr>
+    {% for character in character_list %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ character.name }}</td>
+        <td>{{ character.description }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
