@@ -14,6 +14,7 @@
       1. Character
          1. name, description
          2. `__str__()`: 객체를 출력할 때, 알맞은 string으로 출력하기 위해 만든다
+         3. `get_absolute_url()`: 캐릭터 하나 데이터 가져오자
       2. python manage.py makemigrations DontStarve
       3. python manage.py migrate
    2. admin
@@ -21,10 +22,13 @@
       2. python manage.py createsuperuser
    3. views
       1. R: CharacterListView
+      2. R: CharacterDetailView
    4. templates/DontStarve/
       1. character_list.html
+      2. character_detail.html
    5. urls
       1. DontStarve: character_list
+      2. DontStarve: character_detail
    6. templates
       1. hase.html
          1. setttings.py > TEMPLATES
