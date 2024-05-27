@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView
 from DontStarve.models import Character
 
 
@@ -15,3 +16,9 @@ class CharacterDetailView(DetailView):
     model = Character
     # character = Character.objects.get(pk=pk)
     # return render(request, '콩순이/character_detail.html', context={'character':character})
+
+class CharacterCreateView(CreateView):
+    model = Character
+    fields = ['name', 'description'] # '__all__'
+    template_name_suffix = '_create' # character_form.html -> character_create.html
+    success_url = reverse_lazy('DontStarve:character_list') #만들기 성공할 때 이동할 URL
