@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from DontStarve.models import Character
 
 
@@ -28,3 +28,7 @@ class CharacterUpdateView(UpdateView):
     fields = '__all__' #['name', 'description']
     template_name_suffix = '_update' #character_form.html -> character_update.html
     success_url = reverse_lazy('DontStarve:character_detail') #수정 완료 후 이동할 URL
+
+class CharacterDeleteView(DeleteView):
+    model = Character
+    success_url = reverse_lazy('DontStarve:character_list') #삭제 완료 후 이동할 URL
