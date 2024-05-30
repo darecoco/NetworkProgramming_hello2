@@ -19,15 +19,15 @@ class CharacterDetailView(DetailView):
 
 class CharacterCreateView(CreateView):
     model = Character
-    fields = ['name', 'description'] # '__all__'
+    fields = ['name', 'description', 'photo'] # '__all__'
     template_name_suffix = '_create' # character_form.html -> character_create.html
     success_url = reverse_lazy('DontStarve:character_list') #만들기 성공할 때 이동할 URL
 
 class CharacterUpdateView(UpdateView):
     model = Character
-    fields = '__all__' #['name', 'description']
+    fields = '__all__' #['name', 'description', 'photo']
     template_name_suffix = '_update' #character_form.html -> character_update.html
-    success_url = reverse_lazy('DontStarve:character_detail') #수정 완료 후 이동할 URL
+    success_url = reverse_lazy('DontStarve:character_list') #수정 완료 후 이동할 URL
 
 class CharacterDeleteView(DeleteView):
     model = Character

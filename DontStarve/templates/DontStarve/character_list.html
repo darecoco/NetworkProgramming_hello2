@@ -6,6 +6,7 @@
 <table class="table table-bordered">
     <thead class="table-dark">
         <th>#</th>
+        <th>photo</th>
         <th>name</th>
         <th>one liner</th>
         <th>edit</th>
@@ -14,6 +15,14 @@
     {% for character in character_list %}
     <tr>
         <td>{{ forloop.counter }}</td>
+        <td>
+            {% if character.photo == None %}
+                {% load static %}
+                <img src="{% static 'DontStarve/photo/noImage.png' %}" alt="캐릭터 이미지 없음" style="height: 250px; object-fit: cover;">
+            {% else %}
+                <img src="{{ character.photo.url }}" alt="{{ character.name }}" style="height: 250px; object-fit: cover;">
+            {% endif %}
+        </td>
         <td><a href="{% url 'DontStarve:character_detail' pk=character.id %}">{{ character.name }}</a></td>
         <td>{{ character.description }}</td>
         <td><a href="{% url 'DontStarve:character_update' pk=character.id %}" class="btn btn-warning">🛠</a></td>
